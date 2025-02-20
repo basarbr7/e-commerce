@@ -11,8 +11,8 @@ const Root = () => {
       <div className='allPage'>
         <Header/>
         <Navbar/>
-        {/* <Outlet/>
-        <Footer/> */}
+         <Outlet/>
+         {/* <Footer/>  */}
       </div>
     </>
   )

@@ -19,7 +19,7 @@ const Navbar = () => {
   let [accOpen, setAccOpen ]= useState(true)
 
   return (
-     <nav className='font-semibold text-sm bg-amber-100 py-2 select-none '>
+     <nav className='font-semibold text-sm bg-0 py-1 select-none border-b border-[1px] border-6'>
         <Container className='flex justify-between'>
           <div className='flex items-center gap-14 '>
             <Image src={logo} />
@@ -33,7 +33,7 @@ const Navbar = () => {
               ))}
             </ul>
             
-            <div className={`w-[1126px] h-20 items-center text-sm transition-all duration-500 ${show?"hidden":"flex"}`}>
+            <div className={`w-[1080px] h-20 items-center text-sm transition-all duration-500 ${show?"hidden":"flex"}`}>
               <input type="text" placeholder='Search entiere store here...' className='w-full h-[60px] py-3 bg-1 rounded-[31px] outline-none border-0 px-8 placeholder:text-5 ' />
             </div>
           </div>
@@ -44,8 +44,8 @@ const Navbar = () => {
               <FiSearch  className={`text-xl ${show?"block":"hidden"}`} />
             </div>
             <LuShoppingCart  className='scale-x-[-1] text-2xl' />
-            <div className='w-9 h-9 rounded-full flex items-center justify-center cursor-pointer relative'>
-              <CgProfile className='text-4xl' onClick={()=> setAccOpen(!accOpen)} />
+            <div className='w-9 h-9 rounded-full flex items-center justify-center  relative'>
+              <CgProfile className='text-4xl cursor-pointer' onClick={()=> setAccOpen(!accOpen)} />
               <Account className={`absolute top-[140%] right-0 transition-all duration-500 ${accOpen?"opacity-0 invisible":"opacity-100 visible"}`} />
             </div>
           </div>

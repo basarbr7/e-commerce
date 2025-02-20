@@ -22,13 +22,13 @@ const Account = ({className}) => {
     {
       id: 5,
       name: "Sign In",
-    },
+    }
   ]
 
   return (
-    <div className={`w-[232px] bg-0 p-6 shadow-md ${className}`}>
-      <div className='w-5 h-5 bg-0 absolute -top-1 right-[12px] rotate-45 rounded-sm'></div>
-      {accountList.map((item)=>(<p key={item.id} className='leading-[200%] font-medium text-sm'>{item.name}</p>)) }
+    <div className={`w-[232px] bg-1 p-6 shadow-md z-50 ${className}`}>
+      <div className='w-5 h-5 bg-1 absolute -top-1 right-[12px] rotate-45 rounded-sm'></div>
+        {accountList.map((item)=>(<p key={item.id} className='mb-2 font-medium text-sm cursor-pointer '>{item.name}</p>)) }
     </div>
   )
 }

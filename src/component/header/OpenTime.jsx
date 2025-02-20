@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const OpenTime = ({ className }) => {
   return (
-    <div className={`w-[262px] bg-[#ffffff] shadow-md ${className}`}>
+    <div className={`w-[262px] bg-[#ffffff] shadow-md z-50 ${className}`}>
       <div className="absolute -top-[6px] left-8 w-4 h-4 bg-[#ffffff] rounded-[2px] rotate-45">
       </div>
       <div className='time border-b border-6 px-4 py-4 text-7'>

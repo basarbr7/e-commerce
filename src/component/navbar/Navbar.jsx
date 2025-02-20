@@ -1,24 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from '../../layer/Container'
 import { NavLink } from 'react-router-dom'
+import Image from '../../layer/Image';
+import logo from '/logo.png'
+import { LuShoppingCart } from 'react-icons/lu';
+import { FiSearch } from 'react-icons/fi';
+import MenuData from '../../MenuData';
+import { CgProfile } from 'react-icons/cg';
+import { RxCross2 } from 'react-icons/rx';
+import Account from './Account';
 
 
 const Navbar = () => {
 
-  let menuItem = ["Laptops", "Desktop PCs", "Networking Devices", "Printers & Scanners", "PC Parts", "All Other Products", "Repairs"];
+  let menuItem = MenuData;
+
+  let [show, setShow]= useState(true)
+  let [accOpen, setAccOpen ]= useState(true)
 
   return (
-     <nav className='font-semibold text-sm bg-amber-100 py-5 flex justify-center'>
-        <Container>
-          <ul className='flex gap-4'>
-            {menuItem.map((item, index)=>(
-              <li key={index}>
-                <NavLink  className='bg-amber-300 px-5 py-3 rounded-2xl'>
-                  {item}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
+     <nav className='font-semibold text-sm bg-amber-100 py-2 select-none '>
+        <Container className='flex justify-between'>
+          <div className='flex items-center gap-14 '>
+            <Image src={logo} />
+            <ul className= {`items-center gap-6 h-20 text-sm font-semibold transition-all duration-500 ${show?"flex":"hidden"}`}>
+              {menuItem.map((item, index)=>(
+                <li key={index}>
+                  <NavLink to={item.path} className='py-7'>
+                    {item.name}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+            
+            <div className={`w-[1126px] h-20 items-center text-sm transition-all duration-500 ${show?"hidden":"flex"}`}>
+              <input type="text" placeholder='Search entiere store here...' className='w-full h-[60px] py-3 bg-1 rounded-[31px] outline-none border-0 px-8 placeholder:text-5 ' />
+            </div>
+          </div>
+
+          <div className='flex items-center gap-6 ' >
+            <div className='select-none cursor-pointer transition-all duration-500' onClick={()=>setShow(!show)}>
+              <RxCross2 className= {`text-xl ${show?"hidden":"block"}`} />
+              <FiSearch  className={`text-xl ${show?"block":"hidden"}`} />
+            </div>
+            <LuShoppingCart  className='scale-x-[-1] text-2xl' />
+            <div className='w-9 h-9 rounded-full flex items-center justify-center cursor-pointer relative'>
+              <CgProfile className='text-4xl' onClick={()=> setAccOpen(!accOpen)} />
+              <Account className={`absolute top-[140%] right-0 transition-all duration-500 ${accOpen?"opacity-0 invisible":"opacity-100 visible"}`} />
+            </div>
+          </div>
+
         </Container>
      </nav>
   )

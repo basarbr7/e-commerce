@@ -28,7 +28,9 @@ const Account = ({className}) => {
   return (
     <div className={`w-[232px] bg-1 p-6 shadow-md z-50 ${className}`}>
       <div className='w-5 h-5 bg-1 absolute -top-1 right-[12px] rotate-45 rounded-sm'></div>
-        {accountList.map((item)=>(<p key={item.id} className='mb-2 font-medium text-sm cursor-pointer '>{item.name}</p>)) }
+        <ul className='flex flex-col gap-3'>
+          {accountList.map((item)=>(<li key={item.id} className=' font-medium text-sm cursor-pointer'>{item.name}</li>)) }
+        </ul>
     </div>
   )
 }

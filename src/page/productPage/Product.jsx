@@ -6,12 +6,18 @@ import Container from '../../layer/Container';
 const Product = () => {
     const {data, isLoading, error} = useFetch('https://dummyjson.com/products')
     const [ visibleCount, setVisibleCount ]= useState(12)
+    const [ loading, setLoading] = useState(false)
 
     if (isLoading) return <p>Loading...</p>;
     if (error) return <p style={{ color: 'red' }}>{error}</p>;
 
     const handleLoadMore=()=>{
-        setVisibleCount(prev=> prev+6)
+        setLoading(true)
+
+        setTimeout(()=>{
+            setVisibleCount(prev=> prev+6)
+            setLoading(false)
+        }, 1000)
     }
 
     return (
@@ -29,12 +35,12 @@ const Product = () => {
             {
                 visibleCount < data.length && (
                     <div className="mt-6 text-center">
-                        <button
-                            onClick={handleLoadMore}
-                            className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-all duration-300"
-                        >
-                            Load More
-                        </button>
+                        {
+                            loading ? (<button disabled className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-all duration-300">
+                             Loading...</button>) : (<button onClick={handleLoadMore}
+                            className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-all duration-300"> 
+                            Load More </button>)
+                        }
                     </div>
                 )
             }

@@ -10,7 +10,7 @@ const Root = () => {
       <div className='allPage'>
         <Header/>
         <Navbar/>
-         <Outlet/>
+        <Outlet/>
       </div>
     </>
   )

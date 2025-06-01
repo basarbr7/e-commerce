@@ -1,31 +1,18 @@
 import React from 'react'
-
-
-import {
-  createRoutesFromElements,
-  createBrowserRouter,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
-import Root from './Root';
-import Home from './page/homePage/Home';
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/' element={<Root/>}>
-      <Route index element={<Home/>}></Route>
-    </Route>
-  )
-);
-
-
+import { Route, Routes } from 'react-router-dom'
+import Root from './Root'
+import Home from './page/homePage/Home'
+import ProductList from './page/productPage/ProductList'
 
 const App = () => {
   return (
-    <div className='font-Poppins'>
-      <RouterProvider router={router}/>
-    </div>
-  );
+      <Routes>
+        <Route path='/' element={<Root/>}>
+          <Route index element={<Home/>} />
+          <Route path='/productList' element={<ProductList/>}/>
+        </Route>
+      </Routes>
+  )
 }
 
 export default App

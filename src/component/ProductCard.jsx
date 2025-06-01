@@ -2,7 +2,7 @@ import React from 'react'
 import { FcApproval } from "react-icons/fc";
 import { IoIosCall } from "react-icons/io";
 
-const Card = ({ title, price, images, rating, oldPrice, reviews, availabilityStatus}) => {
+const ProductCard = ({ title, price, images, rating, oldPrice, reviews, availabilityStatus}) => {
   return (
      <div className="rounded-md shadow-sm p-6 w-[230px] hover:scale-105 transition-transform duration-500 will-change-transform pointer ">
       <p className='mb-3 flex items-center gap-2'>
@@ -37,4 +37,4 @@ const Card = ({ title, price, images, rating, oldPrice, reviews, availabilitySta
   )
 }
 
-export default Card
+export default ProductCard

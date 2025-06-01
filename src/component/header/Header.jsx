@@ -9,17 +9,15 @@ import OpenTime from "./OpenTime";
 
 const Header = () => {
 
-  let [show, setShow]= useState(false)
-
   return (
     <>
       <header className="bg-[#020202] font-semibold text-xs">
         <Container className='py-2'>
           <Flex className="items-center justify-between text-white">
-            <div className="flex items-center justify-center relative" >
-              <span className="text-[#A2A6B0]">Mon-Thu:</span> &nbsp; <span onClick={()=>setShow(!show)} className="flex items-center justify-center cursor-pointer">9:00 AM -5:30 PM &nbsp; <FaAngleDown className=" text-md select-none" /></span>
+            <div className="flex items-center justify-center relative group" >
+              <span className="text-[#A2A6B0]">Mon-Thu:</span> &nbsp; <span className=" flex items-center justify-center cursor-pointer">9:00 AM -5:30 PM &nbsp; <FaAngleDown className="text-md select-none" /></span>
 
-              <OpenTime className={`${show ? "opacity-100 visible":"opacity-0 invisible"} absolute top-[150%] left-0 transition-opacity duration-400`}/>
+              <OpenTime className={`group-hover:opacity-100 group-hover:visible invisible opacity-0 absolute top-[150%] left-0 transition-opacity duration-400 z-40`}/>
 
             </div>
             <p className="text-[#acacac]">

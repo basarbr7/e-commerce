@@ -12,11 +12,9 @@ import Account from './Account';
 
 
 const Navbar = () => {
-
   let menuItem = MenuData;
 
   let [show, setShow]= useState(true)
-  let [accOpen, setAccOpen ]= useState(true)
 
   return (
      <nav className='font-semibold text-sm bg-0 py-1 select-none border-b border-[1px] border-6'>
@@ -44,9 +42,13 @@ const Navbar = () => {
               <FiSearch  className={`text-xl ${show?"block":"hidden"}`} />
             </div>
             <LuShoppingCart  className='scale-x-[-1] text-2xl' />
-            <div className='w-9 h-9 rounded-full flex items-center justify-center  relative'>
-              <CgProfile className='text-4xl cursor-pointer' onClick={()=> setAccOpen(!accOpen)} />
-              <Account className={`absolute top-[140%] right-0 transition-all duration-500 ${accOpen?"opacity-0 invisible":"opacity-100 visible"}`} />
+
+            <div className='relative group w-9 h-9 rounded-full flex items-center justify-center'>
+              <CgProfile className='text-4xl cursor-pointer' />
+
+              <div className='absolute top-[140%] right-0 transition-all duration-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible z-50'>
+                <Account />
+              </div>
             </div>
           </div>
 

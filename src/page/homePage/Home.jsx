@@ -1,17 +1,17 @@
-import React from 'react'
-import BannerSlider from './BannerSlider'
-import Container from '../../layer/Container'
-import Product from '../productPage/Product'
+import React from "react";
+import BannerSlider from "./sliderComponent/BannerSlider";
+import Container from "../../layer/Container";
+import ProductSlider from "./sliderComponent/ProductSlider";
 
 const Home = () => {
   return (
     <div>
       <Container>
         <BannerSlider />
-        <Product/>
+        <ProductSlider />
       </Container>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

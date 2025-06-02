@@ -4,7 +4,7 @@ import { IoIosCall } from "react-icons/io";
 
 const ProductCard = ({ title, price, images, rating, oldPrice, reviews, availabilityStatus}) => {
   return (
-     <div className="rounded-md shadow-sm p-6 w-[230px] hover:scale-105 transition-transform duration-500 will-change-transform pointer ">
+     <div className="rounded-md shadow-sm px-6 py-2 w-[230px] h-[346px] hover:scale-105 transition-transform duration-500 will-change-transform pointer ">
       <p className='mb-3 flex items-center gap-2'>
         {availabilityStatus.toLowerCase() === 'in stock' && <FcApproval />}
         {availabilityStatus.toLowerCase() === 'low stock' && <IoIosCall className='bg-red-500 p-1 rounded-full text-white'/> }
@@ -22,9 +22,11 @@ const ProductCard = ({ title, price, images, rating, oldPrice, reviews, availabi
       
       
       {/* Title */}
-      <h3 className="text-sm font-medium text-gray-800 mb-2">
-        {title.length > 50 ? title.slice(0, 50) + '...' : title}
-      </h3>
+      <div>
+        <h3 className="text-sm font-medium text-gray-800 mb-2 ">
+          {title.length > 50 ? title.slice(0, 50) + '...' : title}
+        </h3>
+      </div>
 
       {/* Price */}
       <div>

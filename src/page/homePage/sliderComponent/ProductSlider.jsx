@@ -24,15 +24,7 @@ const ProductSlider = () => {
         items={data}
         slidesToShow={6}
         renderItem={(item) => {
-          const {
-            id,
-            title,
-            price,
-            images,
-            rating,
-            reviews,
-            availabilityStatus,
-          } = item;
+          const {id, title, price, images, rating, reviews, availabilityStatus } = item;
           return (
             <ProductCard
               key={id}

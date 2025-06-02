@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Container from '../../layer/Container'
 import { NavLink } from 'react-router-dom'
 import Image from '../../layer/Image';
-import logo from '/logo.png'
+import logo from '../../assets/logo.png'
 import { LuShoppingCart } from 'react-icons/lu';
 import { FiSearch } from 'react-icons/fi';
 import MenuData from '../../MenuData';

@@ -1,5 +1,11 @@
 export default  [
     {
+      id: 0,
+      name: "Home",
+      path: "/",
+      status: "active"
+    },
+    {
       id: 1,
       name: "Laptops",
       path: "laptops",

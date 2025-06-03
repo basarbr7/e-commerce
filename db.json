@@ -1,18 +1,21 @@
 {
-  "customAllProducts": [
+  "Products": [
     {
       "id": 1,
+      "brand":"MSI",
       "title": "CHARLIE V6",
       "images": "/dbimage/customBuild/image 29.png",
       "availabilityStatus": "in Stock",
       "oldPrice": 549.99,
       "price": 499.0,
       "rating": 4,
-      "reviews": [{},{},{}],
-      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One"
+      "reviews": 5,
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GS"
     },
     {
       "id": 2,
+      "brand":"MSI",
       "title": "BRAVO V6",
       "images": "/dbimage/customBuild/image 29 (1).png",
       "availabilityStatus": "in Stock",
@@ -20,10 +23,12 @@
       "price": 499.0,
       "rating": 4,
       "reviews": 4,
-      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One"
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GS"
     },
     {
       "id": 3,
+      "brand": "MSI",
       "title": "BRAVO V6",
       "images": "/dbimage/customBuild/image 29 (2).png",
       "availabilityStatus": "in Stock",
@@ -31,10 +36,12 @@
       "price": 499.0,
       "rating": 4,
       "reviews": 4,
-      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One"
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GS"
     },
     {
       "id": 4,
+      "brand":"MSI",
       "title": "BRAVO V6",
       "images": "/dbimage/customBuild/image 29 (3).png",
       "availabilityStatus": "in Stock",
@@ -42,10 +49,12 @@
       "price": 499.0,
       "rating": 4,
       "reviews": 4,
-      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One"
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GS"
     },
     {
       "id": 5,
+      "brand":"MSI",
       "title": "BRAVO V6",
       "images": "/dbimage/customBuild/image 29 (4).png",
       "availabilityStatus": "in Stock",
@@ -53,10 +62,12 @@
       "price": 499.0,
       "rating": 4,
       "reviews": 4,
-      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One"
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GS"
     },
     {
       "id": 6,
+      "brand":"MSI",
       "title": "BRAVO V6",
       "images": "/dbimage/customBuild/image 29.png",
       "availabilityStatus": "in Stock",
@@ -64,32 +75,38 @@
       "price": 499.0,
       "rating": 4,
       "reviews": 4,
-      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One"
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GT"
     },
     {
       "id": 7,
+      "brand":"MSI",
       "title": "BRAVO V6",
-      "images": "/dbimage/customBuild/image 29.png",
+      "images": "/dbimage/customBuild/image 29 (2).png",
       "availabilityStatus": "in Stock",
       "oldPrice": 549.99,
       "price": 499.0,
       "rating": 4,
       "reviews": 4,
-      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One"
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GT"
     },
     {
       "id": 8,
+      "brand":"MSI",
       "title": "BRAVO V6",
-      "images": "/dbimage/customBuild/image 29.png",
+      "images": "/dbimage/customBuild/image 29 (2).png",
       "availabilityStatus": "in Stock",
       "oldPrice": 549.99,
       "price": 499.0,
       "rating": 4,
       "reviews": 4,
-      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One"
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GL"
     },
     {
       "id": 9,
+      "brand":"MSI",
       "title": "BRAVO V6",
       "images": "/dbimage/customBuild/image 29.png",
       "availabilityStatus": "in Stock",
@@ -97,10 +114,38 @@
       "price": 499.0,
       "rating": 4,
       "reviews": 4,
-      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One"
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GE"
     },
     {
       "id": 10,
+      "brand":"MSI",
+      "title": "BRAVO V6",
+      "images": "/dbimage/customBuild/image 29 (1).png",
+      "availabilityStatus": "in Stock",
+      "oldPrice": 549.99,
+      "price": 499.0,
+      "rating": 4,
+      "reviews": 4,
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GE"
+    },
+    {
+      "id": 11,
+      "brand":"MSI",
+      "title": "BRAVO V6",
+      "images": "/dbimage/customBuild/image 29 (1).png",
+      "availabilityStatus": "in Stock",
+      "oldPrice": 549.99,
+      "price": 499.0,
+      "rating": 4,
+      "reviews": 4,
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GE"
+    },
+    {
+      "id": 12,
+      "brand":"MSI",
       "title": "BRAVO V6",
       "images": "/dbimage/customBuild/image 29.png",
       "availabilityStatus": "in Stock",
@@ -108,7 +153,125 @@
       "price": 499.0,
       "rating": 4,
       "reviews": 4,
-      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One"
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GE"
+    },
+    {
+      "id": 13,
+      "brand":"MSI",
+      "title": "BRAVO V6",
+      "images": "/dbimage/customBuild/image 29.png",
+      "availabilityStatus": "in Stock",
+      "oldPrice": 549.99,
+      "price": 499.0,
+      "rating": 4,
+      "reviews": 4,
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GE"
+    },
+    {
+      "id": 14,
+      "brand":"MSI",
+      "title": "BRAVO V6",
+      "images": "/dbimage/customBuild/image 29 (4).png",
+      "availabilityStatus": "in Stock",
+      "oldPrice": 549.99,
+      "price": 499.0,
+      "rating": 4,
+      "reviews": 4,
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GL"
+    },
+    {
+      "id": 15,
+      "brand":"MSI",
+      "title": "BRAVO V6",
+      "images": "/dbimage/customBuild/image 29 (4).png",
+      "availabilityStatus": "in Stock",
+      "oldPrice": 549.99,
+      "price": 499.0,
+      "rating": 4,
+      "reviews": 4,
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GL"
+    },
+    {
+      "id": 16,
+      "brand":"MSI",
+      "title": "BRAVO V6",
+      "images": "/dbimage/customBuild/image 29.png",
+      "availabilityStatus": "in Stock",
+      "oldPrice": 549.99,
+      "price": 499.0,
+      "rating": 4,
+      "reviews": 4,
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GL"
+    },
+    {
+      "id": 17,
+      "brand":"MSI",
+      "title": "BRAVO V6",
+      "images": "/dbimage/customBuild/image 29.png",
+      "availabilityStatus": "in Stock",
+      "oldPrice": 549.99,
+      "price": 499.0,
+      "rating": 4,
+      "reviews": 4,
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GL"
+    },
+    {
+      "id": 18,
+      "brand":"MSI",
+      "title": "BRAVO V6",
+      "images": "/dbimage/customBuild/image 29.png",
+      "availabilityStatus": "in Stock",
+      "oldPrice": 549.99,
+      "price": 499.0,
+      "rating": 4,
+      "reviews": 4,
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GL"
+    },
+    {
+      "id": 19,
+      "brand":"MSI",
+      "title": "BRAVO V6",
+      "images": "/dbimage/customBuild/image 29.png",
+      "availabilityStatus": "in Stock",
+      "oldPrice": 549.99,
+      "price": 499.0,
+      "rating": 4,
+      "reviews": 4,
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GT"
+    },
+    {
+      "id": 20,
+      "brand":"MSI",
+      "title": "BRAVO V6",
+      "images": "/dbimage/customBuild/image 29 (3).png",
+      "availabilityStatus": "in Stock",
+      "oldPrice": 549.99,
+      "price": 499.0,
+      "rating": 4,
+      "reviews": 4,
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GT"
+    },
+    {
+      "id": 21,
+      "brand":"MSI",
+      "title": "BRAVO V6",
+      "images": "/dbimage/customBuild/image 29 (2).png",
+      "availabilityStatus": "in Stock",
+      "oldPrice": 549.99,
+      "price": 499.0,
+      "rating": 4,
+      "reviews": 4,
+      "description": "EX DISPLAY • MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-One",
+      "catagory": "GT"
     }
   ]
 }

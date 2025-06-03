@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Container from '../../layer/Container'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import Image from '../../layer/Image';
 import logo from '../../assets/logo.png'
 import { LuShoppingCart } from 'react-icons/lu';
@@ -20,7 +20,9 @@ const Navbar = () => {
      <nav className='font-semibold text-sm bg-0 py-1 select-none border-b border-[1px] border-6'>
         <Container className='flex justify-between'>
           <div className='flex items-center gap-14 '>
-            <Image src={logo} />
+            <Link to='/'>
+              <Image src={logo} alt="logo" />
+            </Link>
             <ul className= {`items-center gap-6 h-20 text-sm font-semibold transition-all duration-500 ${show?"flex":"hidden"}`}>
               {menuItem.map((item, index)=>(
                 <li key={index}>

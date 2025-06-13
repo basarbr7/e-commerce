@@ -6,7 +6,7 @@ import CustomBuildAll from './page/homePage/customBuild/CustomBuildAll'
 import Root from './Root'
 import ProductDetails from './page/productPage/ProductDetails'
 import { Provider } from 'react-redux'
-import store from './redux/Store'
+import store from './redux/store'
 import Cart from './page/Cart'
 
 

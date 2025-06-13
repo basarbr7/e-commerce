@@ -1,13 +1,17 @@
-import React, { useState } from "react";
-import dbData from "../../../../db.json";
-import customBuildImage from "../../../../dbimage/customBuild/customBuilds.png";
+import React from "react";
+import customBuildImage from "/dbimage/customBuild/customBuilds.png";
 import ProductCard from "../../../component/ProductCard";
 import { Link } from "react-router-dom";
 import Zip from "../../../assets/primary 1.png"
+import { useSelector } from "react-redux";
 
 const CustomBuild = () => {
-  const [data, setData] = useState(dbData.Products);
-
+  const data = useSelector(state=>state.products.products)
+  if (!data || data.length === 0) {
+      return <p className="text-center">Loading Products...</p>;
+  }
+  const find = data.filter(item=>item.catagory==="custom")
+  
   return (
     <>
       <div className="bg-1 text-center text-lg font-Poppins py-5 mb-4 flex justify-center items-center gap-5 ">
@@ -25,22 +29,16 @@ const CustomBuild = () => {
           </div>
         </div>
 
-        {data.slice(0, 5).map((item) => {
-          const {
-            id,
-            title,
-            price,
-            images,
-            rating,
-            reviews,
-            availabilityStatus,
-          } = item;
+        {find.slice(0, 5).map((item) => {
+          const {id, title, price, oldPrice, images, rating, reviews,
+            availabilityStatus,} = item;
           return (
             <ProductCard
               key={id}
               id={id}
               title={title}
               price={price}
+              oldPrice={oldPrice}
               images={images}
               rating={rating}
               reviews={reviews}

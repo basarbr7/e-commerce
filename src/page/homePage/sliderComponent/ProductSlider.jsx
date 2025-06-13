@@ -1,15 +1,16 @@
 import React from "react";
-import useFetch from "../../../FeatchApi/useFetch";
 import ProductCard from "../../../component/ProductCard";
-import ReusableSlider from "../../../component/ReusableSlider/ReusableSlider";
+import ReusableSlider from "../../../component/ReusableSlider";
 import Container from "../../../layer/Container";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const ProductSlider = () => {
-  const { data, isLoading, error } = useFetch("https://dummyjson.com/products");
-
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p style={{ color: "red" }}>{error}</p>;
+  const data = useSelector((state) => state.products.products);
+  if (!data || data.length === 0) {
+    return <p className="text-center">Loading Products...</p>;
+  }
+  const newProducts = data.filter(product => product.isNew);
 
   return (
     <Container className="py-10">
@@ -21,15 +22,27 @@ const ProductSlider = () => {
       </div>
 
       <ReusableSlider
-        items={data}
+        items={newProducts}
         slidesToShow={6}
         renderItem={(item) => {
-          const {id, title, price, images, rating, reviews, availabilityStatus } = item;
+          const {
+            id,
+            title,
+            price,
+            oldPrice,
+            images,
+            rating,
+            reviews,
+            availabilityStatus,
+          } = item;
+
           return (
             <ProductCard
               key={id}
+              id={id}
               title={title}
               price={price}
+              oldPrice={oldPrice}
               images={images}
               rating={rating}
               reviews={reviews}

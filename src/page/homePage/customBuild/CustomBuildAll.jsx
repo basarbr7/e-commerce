@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import dbData from "../../../../db.json";
 import ProductCard from "../../../component/ProductCard";
 import Container from "../../../layer/Container";
+import { useSelector } from "react-redux";
 
 const CustomBuildAll = () => {
-  const [data, setData] = useState(dbData.Products);
+  const data = useSelector(state=>state.products.products)
+  if (!data || data.length === 0) {
+      return <p className="text-center">Loading Products...</p>;
+  }
   const [visibleCount, setVisibleCount]= useState(18)
   const [loading, setLoading] = useState(false)
 
@@ -18,9 +21,7 @@ const CustomBuildAll = () => {
 
   return (
     <>
-      
       <Container className="pt-10">
-        
         <div className="flex flex-wrap gap-x-1 gap-y-10 mb-20">
             {data.slice(0, visibleCount).map((item) => {
             const { id, title, price, images, rating, reviews, availabilityStatus, } = item;

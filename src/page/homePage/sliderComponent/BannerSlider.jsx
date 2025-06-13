@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import banner1 from "../../../assets/banner1.png";
 import banner2 from "../../../assets/banner2.jpg";
 import banner3 from "../../../assets/banner3.jpg";
-import ReusableSlider from "../../../component/ReusableSlider/ReusableSlider";
+import ReusableSlider from "../../../component/ReusableSlider";
 
 const bannerItems = [
   { id: 1, src: banner1, to: "/lalala" },

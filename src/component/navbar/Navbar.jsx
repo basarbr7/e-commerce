@@ -5,25 +5,50 @@ import Image from '../../layer/Image';
 import logo from '../../assets/logo.png'
 import { LuShoppingCart } from 'react-icons/lu';
 import { FiSearch } from 'react-icons/fi';
-import MenuData from '../../MenuData';
 import { CgProfile } from 'react-icons/cg';
 import { RxCross2 } from 'react-icons/rx';
 import Account from './Account';
+import { useSelector } from 'react-redux';
 
+let menuItem = [
+    {
+      id: 0,
+      name: "Home",
+      path: "/",
+      status: "active"
+    },
+    {
+      id: 1,
+      name: "Shop",
+      path: "shop",
+      status: "active"
+    },
+    {
+      id: 2,
+      name: "About",
+      path: "about",
+      status: "active"
+    },
+    {
+      id: 3,
+      name: "Contact",
+      path: "contact",
+      status: "active"
+    },
+  ];
 
 const Navbar = () => {
-  let menuItem = MenuData;
-
+  const totalItems = useSelector(state => state.cart.totalQuantity);
   let [show, setShow]= useState(true)
 
   return (
      <nav className='font-semibold text-sm bg-0 py-1 select-none border-b border-[1px] border-6'>
         <Container className='flex justify-between'>
-          <div className='flex items-center gap-14 '>
+          <div className='w-full flex items-center  '>
             <Link to='/'>
               <Image src={logo} alt="logo" />
             </Link>
-            <ul className= {`items-center gap-6 h-20 text-sm font-semibold transition-all duration-500 ${show?"flex":"hidden"}`}>
+            <ul className= {`w-full flex justify-center items-center gap-10 h-20 text-sm font-semibold transition-all duration-500 ${show?"flex":"hidden"}`}>
               {menuItem.map((item, index)=>(
                 <li key={index}>
                   <NavLink to={item.path} className='py-7'>
@@ -43,7 +68,16 @@ const Navbar = () => {
               <RxCross2 className= {`text-xl ${show?"hidden":"block"}`} />
               <FiSearch  className={`text-xl ${show?"block":"hidden"}`} />
             </div>
-            <LuShoppingCart  className='scale-x-[-1] text-2xl' />
+
+              {/* cart */}
+            <Link to="/cart" className="relative cursor-pointer">
+              <LuShoppingCart className="scale-x-[-1] text-2xl" />
+              {totalItems > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
+            </Link>
 
             <div className='relative group w-9 h-9 rounded-full flex items-center justify-center'>
               <CgProfile className='text-4xl cursor-pointer' />

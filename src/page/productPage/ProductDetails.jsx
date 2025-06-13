@@ -1,12 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import dbData from '../../../db.json';
 import Container from '../../layer/Container';
+import { useSelector } from 'react-redux';
 
 const ProductDetails = () => {
-const { id } = useParams();
+  const data = useSelector(state=>state.products.products)
+  const { id } = useParams();
 
-const product = dbData.Products.find(item => item.id.toString() === id);
+  const product = data.find(item => item.id.toString() === id);
 
   if (!product) return <p>Product not found</p>;
 

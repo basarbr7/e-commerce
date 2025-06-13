@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
-import useFetch from '../../FeatchApi/useFetch'
 import ProductCard from '../../component/ProductCard';
 import Container from '../../layer/Container';
+import { useSelector } from 'react-redux';
 
 const ProductList = () => {
-    const {data, isLoading, error} = useFetch('https://dummyjson.com/products')
+    const data = useSelector(state=>state.products.products)
+    if (!data || data.length === 0) {
+        return <p className="text-center">Loading Products...</p>;
+    }
     const [ visibleCount, setVisibleCount ]= useState(12)
     const [ dataLoading, setDataLoading] = useState(false)
-
-    if (isLoading) return <p>Loading...</p>;
-    if (error) return <p style={{ color: 'red' }}>{error}</p>;
 
     const handleLoadMore=()=>{
         setDataLoading(true)
@@ -20,14 +20,15 @@ const ProductList = () => {
         }, 1000)
     }
 
+
     return (
         <Container className="pt-10">
             
             <div className='flex flex-wrap gap-1'>
                 { 
                     data.slice(0, visibleCount).map((item) =>{
-                        const {id, title, price, images, rating, reviews, availabilityStatus }= item
-                    return <ProductCard key={id} title={title} price={price} images={images}  rating={rating} reviews={reviews} availabilityStatus={availabilityStatus} />
+                    const {id, title, price, oldPrice, images, rating, reviews, availabilityStatus }= item;
+                    return <ProductCard key={id} id={id} title={title} price={price} oldPrice={oldPrice} images={images}  rating={rating} reviews={reviews} availabilityStatus={availabilityStatus} />
                     }) 
                 }
             </div>

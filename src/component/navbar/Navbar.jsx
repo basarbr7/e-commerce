@@ -11,30 +11,10 @@ import Account from './Account';
 import { useSelector } from 'react-redux';
 
 let menuItem = [
-    {
-      id: 0,
-      name: "Home",
-      path: "/",
-      status: "active"
-    },
-    {
-      id: 1,
-      name: "Shop",
-      path: "shop",
-      status: "active"
-    },
-    {
-      id: 2,
-      name: "About",
-      path: "about",
-      status: "active"
-    },
-    {
-      id: 3,
-      name: "Contact",
-      path: "contact",
-      status: "active"
-    },
+    {id: 0, name: "Home",  path: "/", status: "active" },
+    { id: 1, name: "Shop", path: "shop", status: "active" },
+    { id: 2, name: "About", path: "about", status: "active" },
+    { id: 3, name: "Contact", path: "contact", status: "active"},
   ];
 
 const Navbar = () => {
@@ -46,7 +26,7 @@ const Navbar = () => {
         <Container className='flex justify-between'>
           <div className='w-full flex items-center  '>
             <Link to='/'>
-              <Image src={logo} alt="logo" />
+              <Image src={logo} alt="logo" className="object-cover " />
             </Link>
             <ul className= {`w-full flex justify-center items-center gap-10 h-20 text-sm font-semibold transition-all duration-500 ${show?"flex":"hidden"}`}>
               {menuItem.map((item, index)=>(
@@ -58,9 +38,9 @@ const Navbar = () => {
               ))}
             </ul>
             
-            <div className={`w-[1080px] h-20 items-center text-sm transition-all duration-500 ${show?"hidden":"flex"}`}>
-              <input type="text" placeholder='Search entiere store here...' className='w-full h-[60px] py-3 bg-1 rounded-[31px] outline-none border-0 px-8 placeholder:text-5 ' />
-            </div>
+            <form className={`w-full h-20 items-center text-sm transition-all duration-500 ml-5 ${show?"hidden":"flex"}`}>
+              <input type="text" placeholder='Search entiere store here...' className='w-[95%] h-[60px] py-3 bg-1 rounded-[31px] outline-none border-0 px-8 placeholder:text-5 ' />
+            </form>
           </div>
 
           <div className='flex items-center gap-6 ' >

@@ -1,21 +1,48 @@
 import React from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 import Container from '../../layer/Container';
 
 const AboutProduct = () => {
   const { product } = useOutletContext();
 
   return (
-    <Container>
-        <div className="">
-        <img src={product.images} alt={product.title} className="w-64 h-auto object-cover mb-4" />
-        <h2 className="text-2xl font-bold">{product.title}</h2>
-        <p className="text-gray-600 mt-2">${product.price}</p>
-        <p className="text-yellow-500 mt-2">Rating: {product.rating}</p>
-        <p className="mt-4 text-sm text-gray-500">{product.availabilityStatus}</p>
-        <p className="mt-4">{product.reviews} reviews</p>
+    <div className="py-10 bg-white">
+      <Container>
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10">
+          
+          {/* Left Side - Product Info */}
+          <div className="w-full lg:w-1/2 space-y-4">
+            <h2 className="text-3xl font-bold text-gray-800">{product.title}</h2>
+            <p className="text-gray-700 text-lg">${product.price}</p>
+            <p className="text-yellow-500 text-sm font-medium">Rating: {product.rating} / 5</p>
+            <p className="text-sm text-green-600">{product.availabilityStatus}</p>
+            <p className="text-sm text-gray-500">{product.reviews} reviews</p>
+
+            {/* Color Swatches (if needed) */}
+            <div className="flex items-center gap-2 mt-3">
+              <span className="block w-5 h-5 bg-gray-300 rounded-full border" />
+              <span className="block w-5 h-5 bg-blue-500 rounded-full border" />
+              <span className="block w-5 h-5 bg-yellow-400 rounded-full border" />
+            </div>
+
+            {/* Questions */}
+            <div className="mt-6 text-sm">
+              Have a Question? <Link to="/contact" className="text-blue-600 underline">Contact Us</Link>
+            </div>
+          </div>
+
+          {/* Right Side - Image */}
+          <div className="w-full lg:w-1/2 flex justify-center">
+            <img
+              src={product.images}
+              alt={product.title}
+              className="max-w-xs w-full object-contain"
+            />
+          </div>
+
         </div>
-    </Container>
+      </Container>
+    </div>
   );
 };
 

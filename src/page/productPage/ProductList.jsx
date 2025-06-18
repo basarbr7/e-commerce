@@ -22,7 +22,7 @@ const ProductList = () => {
 
 
     return (
-        <Container className="pt-10">
+        <Container className="py-10">
             
             <div className='flex flex-wrap gap-1'>
                 { 

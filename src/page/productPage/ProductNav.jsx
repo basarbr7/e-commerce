@@ -3,6 +3,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import Container from '../../layer/Container';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateQuantity, addToCart } from '../../redux/CartSlice'; // ✅ Make sure both are imported
+import { CgPaypal } from 'react-icons/cg';
 
 const ProductNav = ({ product }) => {
   const dispatch = useDispatch();
@@ -87,7 +88,8 @@ const ProductNav = ({ product }) => {
               Add to Cart
             </div>
 
-            <div className='bg-yellow-400 py-5 px-12 rounded-full cursor-pointer text-[#139AD6] font-bold'>
+            <div className='bg-yellow-400 py-5 px-12 rounded-full cursor-pointer text-[#139AD6] font-bold flex items-center'>
+              <CgPaypal className='text-2xl'/>
               <span className='text-[#263B80]'>Pay</span>Pal
             </div>
           </div>

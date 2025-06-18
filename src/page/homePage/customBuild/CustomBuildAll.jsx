@@ -1,58 +1,51 @@
 import React, { useState } from "react";
+import ReactPaginate from "react-paginate";
 import ProductCard from "../../../component/ProductCard";
 import Container from "../../../layer/Container";
 import { useSelector } from "react-redux";
 
 const CustomBuildAll = () => {
-  const data = useSelector(state=>state.products.products)
-  if (!data || data.length === 0) {
-      return <p className="text-center">Loading Products...</p>;
-  }
-  const [visibleCount, setVisibleCount]= useState(18)
-  const [loading, setLoading] = useState(false)
+  const data = useSelector((state) => state.products.products);
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 12;
 
-  const handleLoadMore= ()=>{
-    setLoading(true)
-    setTimeout(()=>{
-        setVisibleCount(prev=>prev+6)
-        setLoading(false)
-    },1000)
+  if (!data || data.length === 0) {
+    return <p className="text-center">Loading Products...</p>;
   }
+
+  const pageCount = Math.ceil(data.length / itemsPerPage);
+  const offset = currentPage * itemsPerPage;
+  const currentItems = data.slice(offset, offset + itemsPerPage);
+
+  const handlePageClick = ({ selected }) => {
+    setCurrentPage(selected);
+  };
 
   return (
-    <>
-      <Container className="pt-10">
-        <div className="flex flex-wrap gap-x-1 gap-y-10 mb-20">
-            {data.slice(0, visibleCount).map((item) => {
-            const { id, title, price, images, rating, reviews, availabilityStatus, } = item;
-            return (
-                <ProductCard
-                key={id}
-                id={id}
-                title={title}
-                price={price}
-                images={images}
-                rating={rating}
-                reviews={reviews}
-                availabilityStatus={availabilityStatus}
-                />
-            );
-            })}
-        </div>
-        
-        {
-            visibleCount<data.length && (<div className="text-center ">
-                <button 
-                    onClick={handleLoadMore}
-                    disabled={loading}
-                    className="bg-blue-400 px-6 py-3 cursour-pointer ">
-                    {loading? 'Loading...': 'Load More'}
-                </button>
-            </div>)
-        }
+    <Container className="py-10">
+      <div className="flex flex-wrap gap-x-1 gap-y-10 mb-20">
+        {currentItems.map((item) => (
+          <ProductCard key={item.id} {...item} />
+        ))}
+      </div>
 
-      </Container>
-    </>
+      <ReactPaginate
+        previousLabel={"Prev"}
+        nextLabel={"Next"}
+        pageCount={pageCount}
+        onPageChange={handlePageClick}
+        containerClassName="flex justify-center gap-2 text-sm"
+        pageClassName="border rounded cursor-pointer hover:bg-gray-200 "
+        pageLinkClassName="block px-3 py-1"         
+        activeLinkClassName="bg-blue-600 text-white" 
+        previousClassName="mr-5 border rounded cursor-pointer hover:bg-gray-200"
+        previousLinkClassName="block px-3 py-1 "
+        nextClassName="ml-5 border rounded cursor-pointer hover:bg-gray-200 "
+        nextLinkClassName="block px-3 py-1"
+        disabledClassName="opacity-50 cursor-not-allowed"
+      />
+
+    </Container>
   );
 };
 

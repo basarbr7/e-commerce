@@ -5,6 +5,7 @@ import { Outlet } from 'react-router-dom'
 import { setProducts } from './redux/ProductSlice'
 import dbData from './db.json';
 import { useDispatch } from 'react-redux'
+import Footer from './component/footer/Footer'
 
 
 const Root = () => {
@@ -19,6 +20,7 @@ const Root = () => {
         <Header/>
         <Navbar/>
         <Outlet/>
+        <Footer/>
     </>
   )
 }

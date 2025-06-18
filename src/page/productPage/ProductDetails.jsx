@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProductNav from './ProductNav';
+import Breadcrumb from '../../Breadcrumb';
 
 const ProductDetails = () => {
   const data = useSelector(state => state.products.products);
@@ -13,7 +14,8 @@ const ProductDetails = () => {
   return (
   
     <>
-      <ProductNav id={id} />
+      <ProductNav id={id} product={product}/>
+      <Breadcrumb/>
       <Outlet context={{product}}/>
     </>
   );

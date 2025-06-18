@@ -3,9 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import CartItem from "./CartItem";
 import CartSummary from "./CartSummary";
 import { removeFromCart } from "../../redux/CartSlice";
+import Breadcrumb from "../../Breadcrumb";
 
 const Cart = () => {
-  const cartItems = useSelector((state) => state.cart.cartItems);
+  const cartItems = useSelector((state) => state.cart.cartItems);  
   const dispatch = useDispatch();
 
   const handleRemove = (id) => {
@@ -20,6 +21,7 @@ const Cart = () => {
   return (
     <div className="max-w-7xl mx-auto p-6 flex flex-col md:flex-row gap-8">
       <div className="w-full md:w-2/3">
+        <Breadcrumb/>
         <h1 className="text-2xl font-bold mb-6">Shopping Cart</h1>
         {cartItems.length === 0 ? (
           <p>Your cart is empty.</p>
